@@ -1,26 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AnnouncementBar } from "@/components/limovi/AnnouncementBar";
+import { Header } from "@/components/limovi/Header";
+import { Hero } from "@/components/limovi/Hero";
+import { Categories } from "@/components/limovi/Categories";
+import { FeaturedCollections } from "@/components/limovi/FeaturedCollections";
+import { BestSellers } from "@/components/limovi/BestSellers";
+import { NewArrivals } from "@/components/limovi/NewArrivals";
+import { WhyChooseUs } from "@/components/limovi/WhyChooseUs";
+import { Testimonials } from "@/components/limovi/Testimonials";
+import { Newsletter } from "@/components/limovi/Newsletter";
+import { Footer } from "@/components/limovi/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Limovi — Heirloom Jewellery for the Modern Woman" },
+      {
+        name: "description",
+        content:
+          "Discover Limovi — hand-finished gold and ethically sourced diamond jewellery, crafted by master artisans into heirlooms for generations.",
+      },
+      { property: "og:title", content: "Limovi — Heirloom Jewellery" },
+      {
+        property: "og:description",
+        content: "Premium bridal, diamond and everyday jewellery. Hallmarked, certified, lifetime exchange.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <AnnouncementBar />
+      <Header />
+      <main>
+        <Hero />
+        <Categories />
+        <FeaturedCollections />
+        <BestSellers />
+        <NewArrivals />
+        <WhyChooseUs />
+        <Testimonials />
+        <Newsletter />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
