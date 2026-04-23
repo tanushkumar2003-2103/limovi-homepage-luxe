@@ -12,6 +12,9 @@ interface Props {
 }
 
 export function QuickViewModal({ product, open, onOpenChange }: Props) {
+  const { addToCart, toggleWishlist, isWished } = useShop();
+  const wished = product ? isWished(product.id) : false;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background border-border">
