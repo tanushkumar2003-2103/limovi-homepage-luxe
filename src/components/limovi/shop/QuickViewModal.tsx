@@ -1,7 +1,9 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Star, ShoppingBag, Heart } from "lucide-react";
+import { toast } from "sonner";
 import type { ShopProduct } from "@/lib/shop-data";
 import { formatINR } from "@/lib/shop-data";
+import { useShop } from "@/context/ShopContext";
 
 interface Props {
   product: ShopProduct | null;

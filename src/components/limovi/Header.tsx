@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
+import { useShop } from "@/context/ShopContext";
 
 const navItems: { label: string; to: string }[] = [
   { label: "All Jewellery", to: "/shop" },
@@ -15,6 +16,7 @@ const navItems: { label: string; to: string }[] = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { cartCount, wishlist } = useShop();
 
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-border/60">
@@ -53,15 +55,22 @@ export function Header() {
             <button aria-label="Account" className="hidden md:block hover:text-plum transition">
               <User className="h-[18px] w-[18px]" />
             </button>
-            <button aria-label="Wishlist" className="hover:text-plum transition">
+            <Link to="/wishlist" aria-label="Wishlist" className="relative hover:text-plum transition">
               <Heart className="h-[18px] w-[18px]" />
-            </button>
-            <button aria-label="Cart" className="relative hover:text-plum transition">
+              {wishlist.length > 0 && (
+                <span className="absolute -top-1.5 -right-2 bg-gold text-plum-deep text-[9px] font-medium h-4 w-4 rounded-full grid place-items-center">
+                  {wishlist.length}
+                </span>
+              )}
+            </Link>
+            <Link to="/cart" aria-label="Cart" className="relative hover:text-plum transition">
               <ShoppingBag className="h-[18px] w-[18px]" />
-              <span className="absolute -top-1.5 -right-2 bg-plum-deep text-champagne text-[9px] font-medium h-4 w-4 rounded-full grid place-items-center">
-                2
-              </span>
-            </button>
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-2 bg-plum-deep text-champagne text-[9px] font-medium h-4 w-4 rounded-full grid place-items-center">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
       </div>

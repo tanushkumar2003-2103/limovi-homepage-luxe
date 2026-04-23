@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Heart, Star, ShoppingBag, Eye, ChevronDown } from "lucide-react";
+import { toast } from "sonner";
 import type { ShopProduct } from "@/lib/shop-data";
 import { formatINR } from "@/lib/shop-data";
+import { useShop } from "@/context/ShopContext";
 
 interface Props {
   product: ShopProduct;
@@ -16,8 +18,9 @@ const badgeStyles: Record<string, string> = {
 };
 
 export function ShopProductCard({ product, index = 0, onQuickView }: Props) {
-  const [wished, setWished] = useState(false);
   const [openDetails, setOpenDetails] = useState(false);
+  const { addToCart, toggleWishlist, isWished } = useShop();
+  const wished = isWished(product.id);
 
   const discount = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -65,7 +68,10 @@ export function ShopProductCard({ product, index = 0, onQuickView }: Props) {
         {/* Wishlist */}
         <button
           aria-label="Add to wishlist"
-          onClick={() => setWished((w) => !w)}
+          onClick={() => {
+            toggleWishlist(product);
+            toast.success(wished ? "Removed from wishlist" : "Added to wishlist");
+          }}
           className={`absolute top-3 right-3 z-10 h-9 w-9 rounded-full bg-champagne/90 backdrop-blur grid place-items-center transition-all duration-300 hover:bg-gold hover:scale-110 ${wished ? "text-rose-600" : "text-plum-deep"}`}
         >
           <Heart className={`h-4 w-4 transition-transform ${wished ? "fill-current scale-110" : ""}`} />
@@ -75,6 +81,10 @@ export function ShopProductCard({ product, index = 0, onQuickView }: Props) {
         <div className="absolute inset-x-3 bottom-3 z-10 flex gap-2 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
           <button
             disabled={!product.inStock}
+            onClick={() => {
+              addToCart(product);
+              toast.success(`${product.name} added to bag`);
+            }}
             className="flex-1 inline-flex items-center justify-center gap-2 bg-plum-deep text-champagne text-[11px] tracking-[0.2em] uppercase py-3 hover:bg-gold hover:text-plum-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ShoppingBag className="h-3.5 w-3.5" />
