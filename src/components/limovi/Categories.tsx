@@ -3,16 +3,16 @@ import necklaces from "@/assets/cat-necklaces.jpg";
 import earrings from "@/assets/cat-earrings.jpg";
 import bangles from "@/assets/cat-bangles.jpg";
 import rings from "@/assets/cat-rings.jpg";
-import pendants from "@/assets/cat-pendants.jpg";
-import nosepins from "@/assets/cat-nosepins.jpg";
+import longChains from "@/assets/cat-long-chains.jpg";
+import harams from "@/assets/cat-harams.jpg";
 
 const categories = [
   { name: "Necklaces", count: "120+ designs", img: necklaces },
   { name: "Earrings", count: "240+ designs", img: earrings },
   { name: "Bangles", count: "85+ designs", img: bangles },
   { name: "Rings", count: "180+ designs", img: rings },
-  { name: "Mangalsutras", count: "60+ designs", img: pendants },
-  { name: "Nose Pins", count: "45+ designs", img: nosepins },
+  { name: "Long Chains", count: "60+ designs", img: longChains },
+  { name: "Harams", count: "45+ designs", img: harams },
 ];
 
 export function Categories() {

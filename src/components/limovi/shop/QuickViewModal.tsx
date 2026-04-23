@@ -1,7 +1,9 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Star, ShoppingBag, Heart } from "lucide-react";
+import { toast } from "sonner";
 import type { ShopProduct } from "@/lib/shop-data";
 import { formatINR } from "@/lib/shop-data";
+import { useShop } from "@/context/ShopContext";
 
 interface Props {
   product: ShopProduct | null;
@@ -10,6 +12,9 @@ interface Props {
 }
 
 export function QuickViewModal({ product, open, onOpenChange }: Props) {
+  const { addToCart, toggleWishlist, isWished } = useShop();
+  const wished = product ? isWished(product.id) : false;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background border-border">
@@ -68,6 +73,11 @@ export function QuickViewModal({ product, open, onOpenChange }: Props) {
               <div className="mt-auto pt-8 flex gap-3">
                 <button
                   disabled={!product.inStock}
+                  onClick={() => {
+                    addToCart(product);
+                    toast.success(`${product.name} added to bag`);
+                    onOpenChange(false);
+                  }}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-plum-deep text-champagne text-[11px] tracking-[0.25em] uppercase py-4 hover:bg-gold hover:text-plum-deep transition-colors disabled:opacity-50"
                 >
                   <ShoppingBag className="h-4 w-4" />
@@ -75,9 +85,13 @@ export function QuickViewModal({ product, open, onOpenChange }: Props) {
                 </button>
                 <button
                   aria-label="Wishlist"
-                  className="h-auto px-5 grid place-items-center bg-champagne text-plum-deep hover:bg-gold transition-colors"
+                  onClick={() => {
+                    toggleWishlist(product);
+                    toast.success(wished ? "Removed from wishlist" : "Added to wishlist");
+                  }}
+                  className={`h-auto px-5 grid place-items-center transition-colors ${wished ? "bg-gold text-plum-deep" : "bg-champagne text-plum-deep hover:bg-gold"}`}
                 >
-                  <Heart className="h-4 w-4" />
+                  <Heart className={`h-4 w-4 ${wished ? "fill-current" : ""}`} />
                 </button>
               </div>
             </div>
