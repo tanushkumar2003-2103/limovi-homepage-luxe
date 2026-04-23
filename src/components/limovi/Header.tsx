@@ -104,9 +104,10 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-8 flex flex-col gap-3 text-sm text-muted-foreground">
+              <Link to="/cart" onClick={() => setOpen(false)} className="flex items-center gap-3"><ShoppingBag className="h-4 w-4" /> Bag ({cartCount})</Link>
+              <Link to="/wishlist" onClick={() => setOpen(false)} className="flex items-center gap-3"><Heart className="h-4 w-4" /> Wishlist ({wishlist.length})</Link>
               <a href="#" className="flex items-center gap-3"><User className="h-4 w-4" /> My Account</a>
               <a href="#" className="flex items-center gap-3"><Search className="h-4 w-4" /> Search</a>
-              <a href="#" className="flex items-center gap-3"><Heart className="h-4 w-4" /> Wishlist</a>
             </div>
           </nav>
         </aside>
