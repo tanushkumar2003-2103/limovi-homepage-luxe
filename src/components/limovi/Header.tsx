@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 
-const navItems = [
-  "All Jewellery",
-  "Gold",
-  "Diamond",
-  "Bridal",
-  "Earrings",
-  "Necklaces",
-  "Rings",
-  "Collections",
+const navItems: { label: string; to: string }[] = [
+  { label: "All Jewellery", to: "/shop" },
+  { label: "Gold", to: "/shop" },
+  { label: "Diamond", to: "/shop" },
+  { label: "Bridal", to: "/shop" },
+  { label: "Earrings", to: "/shop" },
+  { label: "Necklaces", to: "/shop" },
+  { label: "Rings", to: "/shop" },
+  { label: "Collections", to: "/shop" },
 ];
 
 export function Header() {
@@ -27,21 +28,21 @@ export function Header() {
             <Menu className="h-5 w-5" />
           </button>
 
-          <a href="/" className="flex items-center gap-2 md:flex-none flex-1 justify-center md:justify-start">
+          <Link to="/" className="flex items-center gap-2 md:flex-none flex-1 justify-center md:justify-start">
             <span className="font-display text-2xl md:text-3xl font-medium tracking-[0.25em] text-plum-deep">
               LIMOVI
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-[13px] tracking-wide text-foreground/80">
             {navItems.slice(0, 6).map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                to={item.to}
                 className="relative hover:text-plum-deep transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </nav>
 
@@ -84,14 +85,14 @@ export function Header() {
           </div>
           <nav className="p-6 flex flex-col gap-1">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                to={item.to}
                 onClick={() => setOpen(false)}
                 className="font-display text-2xl text-plum-deep py-3 border-b border-border/40 hover:text-gold transition-colors"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
             <div className="mt-8 flex flex-col gap-3 text-sm text-muted-foreground">
               <a href="#" className="flex items-center gap-3"><User className="h-4 w-4" /> My Account</a>
