@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -9,8 +10,6 @@
  * Palette: Deep Plum, Champagne Nude, Muted Gold
  * Type: Cormorant Garamond (display), Inter (body)
  */
-
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 
 @theme inline {
   --font-display: "Cormorant Garamond", serif;
