@@ -10,7 +10,7 @@ export const Route = createFileRoute("/cart")({
   component: CartPage,
   head: () => ({
     meta: [
-      { title: "Your Bag — Limovi" },
+      { title: "Your Bag — Dhanalaxmi Jewellers" },
       { name: "description", content: "Review your selected jewellery pieces and proceed to a secure checkout." },
     ],
   }),

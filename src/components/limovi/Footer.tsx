@@ -21,7 +21,7 @@ export function Footer() {
       <div className="container-luxe py-16 md:py-20">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
           <div className="col-span-2">
-            <div className="font-display text-3xl tracking-[0.25em]">LIMOVI</div>
+            <div className="font-display text-3xl tracking-[0.25em]">DHANALAXMI</div>
             <span className="divider-gold mt-4 block" />
             <p className="mt-5 text-sm text-champagne/70 leading-relaxed max-w-sm">
               Heirloom jewellery for the modern woman. Hand-finished in Jaipur,
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-champagne/15 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-champagne/60">
-          <p>© {new Date().getFullYear()} Limovi Maison · All Rights Reserved</p>
+          <p>© {new Date().getFullYear()} Dhanalaxmi Jewellers · All Rights Reserved</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold">Privacy</a>
             <a href="#" className="hover:text-gold">Terms</a>

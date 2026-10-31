@@ -1,13 +1,13 @@
 const items = [
   {
     quote:
-      "My grandmother's polki necklace was reimagined by Limovi into something I'll wear every week. Their craftsmanship is uncompromising.",
+      "My grandmother's polki necklace was reimagined by Dhanalaxmi Jewellers into something I'll wear every week. Their craftsmanship is uncompromising.",
     name: "Anaïra Mehta",
     title: "Mumbai",
   },
   {
     quote:
-      "I bought my engagement ring from Limovi. Three years later, the stone sparkles like the day I first saw it. Pure poetry.",
+      "I bought my engagement ring from Dhanalaxmi Jewellers. Three years later, the stone sparkles like the day I first saw it. Pure poetry.",
     name: "Saanvi Rao",
     title: "Bangalore",
   },

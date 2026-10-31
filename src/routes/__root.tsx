@@ -31,7 +31,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Limovi — Heirloom Jewellery" },
+      { title: "Dhanalaxmi Jewellers — Heirloom Jewellery" },
       { name: "description", content: "Premium gold and diamond jewellery, crafted by hand." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

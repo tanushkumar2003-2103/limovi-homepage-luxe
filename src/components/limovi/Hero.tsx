@@ -7,7 +7,7 @@ export function Hero() {
       <div className="relative h-[78vh] min-h-[560px] md:h-[88vh] md:min-h-[680px]">
         <img
           src={heroImg}
-          alt="Limovi bridal heritage collection model wearing gold and diamond jewellery"
+          alt="Dhanalaxmi Jewellers bridal heritage collection model wearing gold and diamond jewellery"
           width={1920}
           height={1280}
           className="absolute inset-0 h-full w-full object-cover object-[60%_center] md:object-center"
