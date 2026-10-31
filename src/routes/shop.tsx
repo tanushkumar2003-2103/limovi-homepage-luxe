@@ -36,13 +36,13 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
   head: () => ({
     meta: [
-      { title: "Shop Fine Jewellery — Limovi" },
+      { title: "Shop Fine Jewellery — Dhanalaxmi Jewellers" },
       {
         name: "description",
         content:
-          "Browse the Limovi collection — necklaces, earrings, rings and bridal sets in 18K & 22K gold, ethically sourced diamonds and antique-finish polki.",
+          "Browse the Dhanalaxmi Jewellers collection — necklaces, earrings, rings and bridal sets in 18K & 22K gold, ethically sourced diamonds and antique-finish polki.",
       },
-      { property: "og:title", content: "Shop Fine Jewellery — Limovi" },
+      { property: "og:title", content: "Shop Fine Jewellery — Dhanalaxmi Jewellers" },
       {
         property: "og:description",
         content: "Hand-finished jewellery, hallmarked and certified. Filter by category, price, occasion and metal tone.",

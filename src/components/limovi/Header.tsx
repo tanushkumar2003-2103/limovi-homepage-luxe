@@ -32,7 +32,7 @@ export function Header() {
 
           <Link to="/" className="flex items-center gap-2 md:flex-none flex-1 justify-center md:justify-start">
             <span className="font-display text-2xl md:text-3xl font-medium tracking-[0.25em] text-plum-deep">
-              LIMOVI
+              DHANALAXMI
             </span>
           </Link>
 
@@ -87,7 +87,7 @@ export function Header() {
           className={`absolute left-0 top-0 h-full w-[82%] max-w-sm bg-champagne shadow-luxe transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="flex items-center justify-between p-6 border-b border-border">
-            <span className="font-display text-2xl tracking-[0.25em] text-plum-deep">LIMOVI</span>
+            <span className="font-display text-2xl tracking-[0.25em] text-plum-deep">DHANALAXMI</span>
             <button onClick={() => setOpen(false)} aria-label="Close">
               <X className="h-5 w-5" />
             </button>

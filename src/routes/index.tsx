@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Limovi — Heirloom Jewellery for the Modern Woman" },
+      { title: "Dhanalaxmi Jewellers — Heirloom Jewellery for the Modern Woman" },
       {
         name: "description",
         content:
-          "Discover Limovi — hand-finished gold and ethically sourced diamond jewellery, crafted by master artisans into heirlooms for generations.",
+          "Discover Dhanalaxmi Jewellers — hand-finished gold and ethically sourced diamond jewellery, crafted by master artisans into heirlooms for generations.",
       },
-      { property: "og:title", content: "Limovi — Heirloom Jewellery" },
+      { property: "og:title", content: "Dhanalaxmi Jewellers — Heirloom Jewellery" },
       {
         property: "og:description",
         content: "Premium bridal, diamond and everyday jewellery. Hallmarked, certified, lifetime exchange.",

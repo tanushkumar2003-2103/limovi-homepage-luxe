@@ -13,7 +13,7 @@ export function WhyChooseUs() {
     <section className="py-20 md:py-28 bg-background">
       <div className="container-luxe">
         <SectionHeading
-          eyebrow="The Limovi Promise"
+          eyebrow="The Dhanalaxmi Jewellers Promise"
           title="Why women choose us"
           subtitle="Four generations of master craftsmanship, distilled into every clasp, every prong, every stone."
         />
